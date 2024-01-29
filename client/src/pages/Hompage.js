@@ -7,13 +7,13 @@ const HomePage = () => {
         <>
         <section className='form_data'>
             <div className='small_heading'>
-                <p><i class="fa-solid fa-rocket"></i> for Indian Users Only</p>
+                <p><i className="fa-solid fa-rocket"></i> for Indian Users Only</p>
             </div>
             <div className='form_heading'>
                 <h1> Start posting anonymously where no one will judge. </h1>
             </div>
             <p>Welcom to stranger discussion forum</p>
-            <button>Create Your Account <i class="fa-solid fa-arrow-right"></i></button>
+            <NavLink to='/register'><button className='btn' >Create Your Account <i className="fa-solid fa-arrow-right"></i></button></NavLink>
             <p>Already have account?<NavLink to='/login'>Login</NavLink></p>  
         </section>
         </>

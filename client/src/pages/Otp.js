@@ -15,7 +15,7 @@ const OtpPage = () => {
                 <div className='form-group'>
                 <input type='otp' id='email_otp' name='email_otp' placeholder='Enter Your ID' />
                 </div>
-                <button className='butt_log' type='submit'>Continue <i class="fa-solid fa-arrow-right"></i></button>
+                <button className='butt_log' type='submit'>Continue <i className="fa-solid fa-arrow-right"></i></button>
             </form>
             </div>
         </section>

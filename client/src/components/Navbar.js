@@ -11,7 +11,7 @@ const NavBar=()=> {
     <Navbar className="bg-body-tertiary">
         <Container>
           <Navbar.Brand>
-          <i class="fa-solid fa-grip-vertical"></i>   Anonymous
+          <i className="fa-solid fa-grip-vertical"></i>   Anonymous
           </Navbar.Brand>
         </Container>
       </Navbar>
