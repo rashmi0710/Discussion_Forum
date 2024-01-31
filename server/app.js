@@ -1,21 +1,18 @@
 const dotenv = require("dotenv");
-const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
-
+const router = require('./Routes/router');
 
 dotenv.config({path:'./config.env'});
 require('./db/conn');
 
 
 app.use(express.json());
+app.use(router);
 //linkin router files
-app.use(require('./router/auth'));
-
 
 const PORT = process.env.PORT; 
 //middelware
-
 const middelware = (req,res, next) =>{
   console.log('hello my middleware');
   next();
