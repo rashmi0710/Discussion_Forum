@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { ToastContainer,toast } from 'react-toastify';
+import { registerfunction } from '../services/Apis';
+
+
 
 const RegisterPage = () => {
     const [passshow,setPassShow] = useState(false);
@@ -8,7 +11,7 @@ const RegisterPage = () => {
         email:"",
         password:""
     });
-    console.log(inputdata)
+    // console.log(inputdata)
     
     //setinputvalue
     const handleChange = (e)=>{
@@ -16,7 +19,7 @@ const RegisterPage = () => {
         setInputdata({...inputdata,[name]:value})
     }
     //register data
-    const handleSubmi = (e)=>{
+    const handleSubmi = async(e)=>{
         e.preventDefault();
         const {fname, email, password} = inputdata;
         if(fname === ""){
@@ -28,7 +31,8 @@ const RegisterPage = () => {
         }else if(password.length < 6){
             toast.error("password lenth minimun 6 character")
         }else{
-            toast.success("user register")
+            const response = await registerfunction(inputdata);
+            console.log(response)
         }
     }
 
