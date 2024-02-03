@@ -40,8 +40,7 @@ const RegisterPage = () => {
             console.log(response)
             if(response.status === 201){
                 setInputdata({...inputdata,fname:"",email:"",password:""});
-                navigate('/login');
-            
+                navigate('/user/sucess');
             }else{
                 toast.error(response.data.error);
             }
