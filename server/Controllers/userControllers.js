@@ -9,20 +9,16 @@ exports.userRegister = async(req,res)=>{
         res.status(400).json({error:"Please Enter All Input Data"})
     }
     try{
-        const presuer = await users.findOne({email:email})
+        const presuer = await users.findOne({email:email});
 
         if(presuer){
-            res.status(400).json({error:"This User Already exist in our db"})
+            res.status(422).json({error:"This User Already exist in our db"})
         }else{
-            const userRegister = new users({
-                fname,email,password
-            });
-
-            // here password hashing
+            const userRegister = new users({fname,email,password});
             const storeData = await userRegister.save();
-            res.status(200).json(storeData);
-        }
-    } catch (error) {
-        res.status(400).json({error:"Invaild Details", error});
+            res.status(201).json(storeData);
+        }    
+    }catch(error){
+        res.status(400).json({error:"Invalis Details", error})
     }
-};
+}

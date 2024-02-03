@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer,toast } from 'react-toastify';
-import { registerfunction } from '../services/Apis';
+import { RegisterFunction } from '../services/Apis';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,6 +12,10 @@ const RegisterPage = () => {
         email:"",
         password:""
     });
+
+    const navigate = useNavigate();
+    
+
     // console.log(inputdata)
     
     //setinputvalue
@@ -31,8 +36,15 @@ const RegisterPage = () => {
         }else if(password.length < 6){
             toast.error("password lenth minimun 6 character")
         }else{
-            const response = await registerfunction(inputdata);
+            const response = await RegisterFunction(inputdata);
             console.log(response)
+            if(response.status === 201){
+                setInputdata({...inputdata,fname:"",email:"",password:""});
+                navigate('/login');
+            
+            }else{
+                toast.error(response.data.error);
+            }
         }
     }
 
