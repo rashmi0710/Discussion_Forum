@@ -5,5 +5,5 @@ const controllers = require("../Controllers/userControllers");
 
 //Routes
 router.post("/user/register", controllers.userRegister);
-
+router.post("/user/sendotp", controllers.userOtpSend);
 module.exports = router;

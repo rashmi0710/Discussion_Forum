@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { sentOtpFunction } from "../services/Apis";
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [email,setEmail] = useState("");
+
+  const navigate = useNavigate();
+
   console.log(email);
 
-  const sendOtp = (e)=>{
+  const sendOtp = async(e)=>{
     e.preventDefault();
 
     if (email === "") {
@@ -14,7 +19,16 @@ const LoginPage = () => {
     }else if(!email.includes("@")){
       toast.error("Enter Valid Email !")
     }else{
-      toast.success("login done")
+      const data = {
+        email:email
+      }
+
+      const response = await sentOtpFunction(data);
+      if(response.status === 200){
+        navigate("/user/otp")
+      }else{
+        toast.error(response.data.error);
+      }
     }
   }
 
