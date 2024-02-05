@@ -9,6 +9,7 @@ import ErrorPage from './pages/Error';
 import NavBar from './components/Navbar';
 import { Routes, Route} from 'react-router-dom';
 import './App.css';
+import CreatePost from './pages/CreatePost';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Route path='/user/sucess' element={<AccountCreated/>}/>
       <Route path='/user/otp' element={<OtpPage/>}/>
       <Route path='/user/dashboard' element={<DashBoardPage/>}/>
+      <Route path='/user/createpost' element={<CreatePost/>}/>
       <Route path='*' element={<ErrorPage/>}/>
     </Routes>
     </>

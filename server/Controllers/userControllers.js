@@ -1,6 +1,7 @@
 const users = require("../models/userSchema");
 const userotp = require("../models/userOtp");
 const nodemailer = require("nodemailer");
+const Post = require("../models/userPost");
 
 //email config
 const transpoter = nodemailer.createTransport({
@@ -127,3 +128,23 @@ exports.userLogin = async(req,res)=>{
         res.status(400).json({error:"Invalid Details", error})
     }
 }
+
+exports.userPost = async (req, res) => {
+  const { userId, content } = req.body;
+
+  if (!userId || !content) {
+    res.status(400).json({ error: "Please provide user ID and post content." });
+  }
+
+  try {
+    const newPost = new Post({ userId, content });
+    const savedPost = await newPost.save();
+
+    res.status(201).json(savedPost);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error.", error });
+  }
+};
+
+
+

@@ -7,4 +7,5 @@ const controllers = require("../Controllers/userControllers");
 router.post("/user/register", controllers.userRegister);
 router.post("/user/sendotp", controllers.userOtpSend);
 router.post("/user/login", controllers.userLogin);
+router.post("/user/dashboard", controllers.userPost);
 module.exports = router;

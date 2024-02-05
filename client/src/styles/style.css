@@ -152,3 +152,85 @@ input {
   background-color: aliceblue;
   color: #191919;
 }
+.dashboad_item{
+  background-color: #fff;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5%;
+  color: #191919;
+}
+.homeContainer{
+  width: 70%;
+  height: auto;
+  padding: 2%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.leftPanelHome{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+}
+.leftPanelHome button{
+  width: 75%;
+  height: 6%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #404040;
+}
+
+.leftPanelHome .here{
+  background-color: black;
+  color: #404040;
+  border: 1px solid #404040;
+  margin-top: 30%;
+}
+.rightPanelHome{
+  font-size: 1rem;
+  padding: 2%;
+  background-color: #100c0c;
+  width: 65%;
+  height: 50%;
+  border-radius: 20px;
+  margin: 5px;
+  display: flex;
+  position: relative;
+  left: 325px;
+  bottom: 365px;
+}
+
+.inputpost{
+  margin: 4%;
+  text-align: left;
+}
+textarea {
+  margin: 5%;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #404040;
+  background-color: #404040;
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 1rem;
+  text-align: left; /* Left-align the text in the textarea */
+}
+
+.butt_logg{
+  width: 60%;
+  background-color: gray;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20%;
+}
