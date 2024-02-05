@@ -105,3 +105,25 @@ exports.userOtpSend = async (req, res) => {
     res.status(400).json({ error: "Invalid Details", error });
   }
 };
+
+
+exports.userLogin = async(req,res)=>{
+    const {email,otp} = req.body;
+
+    if(!otp || !email){
+        res.status(400).json({error:"Please Enter Your OTP and email"})
+    }
+    try{
+        const otpVerification = await userotp.findOne({email:email});
+        if(otpVerification.otp === otp){
+            const presuer = await users.findOne({email:email});
+            //token genrate 
+            const token = await presuer.genrateAuthtoken();
+            res.status(200).json({message:"User Login Sussefully Done",userToken:token});
+        }else{
+            res.status(400).json({error:"Invalid OTP"})
+        }
+    }catch{
+        res.status(400).json({error:"Invalid Details", error})
+    }
+}

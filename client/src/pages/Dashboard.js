@@ -1,13 +1,25 @@
-import React from 'react'
-
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const DashBoardPage = () => {
+  const navigate = useNavigate();
+  const userValid = () => {
+    let token = localStorage.getItem("userdbtoken");
+    if (token) {
+      console.log("user valid");
+    } else {
+      navigate("*");
+    }
+  };
 
-    return(
-        <> 
-            <div>DashBoardPage</div>
-        </>
-    )
-}
+  useEffect(() => {
+    userValid();
+  });
+  return (
+    <>
+      <div>DashBoardPage</div>
+    </>
+  );
+};
 
 export default DashBoardPage;
