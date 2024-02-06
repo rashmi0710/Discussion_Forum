@@ -10,6 +10,9 @@ import NavBar from './components/Navbar';
 import { Routes, Route} from 'react-router-dom';
 import './App.css';
 import CreatePost from './pages/CreatePost';
+import AllPost from './pages/AllPost';
+import CommentedPost from './pages/CommentedPost';
+import RepliedPost from './pages/RepliedPost';
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
       <Route path='/user/otp' element={<OtpPage/>}/>
       <Route path='/user/dashboard' element={<DashBoardPage/>}/>
       <Route path='/user/createpost' element={<CreatePost/>}/>
+      <Route path='/user/allpost' element={<AllPost/>}/>
+      <Route path='/user/commentedpost' element={<CommentedPost/>}/>
+      <Route path='/user/repliedpost' element={<RepliedPost/>}/>
       <Route path='*' element={<ErrorPage/>}/>
     </Routes>
     </>

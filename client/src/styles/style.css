@@ -162,9 +162,9 @@ input {
 }
 .homeContainer{
   width: 70%;
-  height: auto;
+  height: max-content;
   padding: 2%;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-left: 15%;
   margin-right: 15%;
 }
@@ -191,31 +191,30 @@ input {
   color: #404040;
   border: 1px solid #404040;
   margin-top: 30%;
+  padding: 2%;
 }
-.rightPanelHome{
+.rightPanelHome {
   font-size: 1rem;
   padding: 2%;
   background-color: #100c0c;
-  width: 65%;
-  height: 50%;
+  width: 40%;
+  height: max-content;
   border-radius: 20px;
-  margin: 5px;
+  margin:2%;
   display: flex;
-  position: relative;
-  left: 325px;
-  bottom: 365px;
+  position: absolute; /* Change from relative to absolute positioning */
+  right: 18%; /* Adjust the positioning as per your layout */
+  top: 15%; /* Adjust the positioning as per your layout */
 }
 
-.inputpost{
-  margin: 4%;
-  text-align: left;
-}
+
 textarea {
+  color: #fff;
   margin: 5%;
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border: 1px solid #404040;
-  background-color: #404040;
+  background-color: black;
   border-radius: 5px;
   resize: vertical;
   font-size: 1rem;
@@ -224,13 +223,15 @@ textarea {
 
 .butt_logg{
   width: 60%;
-  background-color: gray;
-  color: #fff;
+  background-color: black;
+  color: #404040;
   padding: 10px 20px;
   font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  margin-left: 20%;
+  margin-left: 12%;
+  border: 1px solid #404040;
 }
