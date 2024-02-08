@@ -13,3 +13,6 @@ export const userVerify = async(data)=>{
     return await commonRequest("POST",`${BACKEND_URL}/user/login`,data)
 }
 
+export const createPost = async(data)=>{
+    return await commonRequest("POST",`${BACKEND_URL}/user/createpost`,data)
+}

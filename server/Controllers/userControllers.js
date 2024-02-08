@@ -1,7 +1,7 @@
 const users = require("../models/userSchema");
 const userotp = require("../models/userOtp");
 const nodemailer = require("nodemailer");
-const Post = require("../models/userPost");
+const posts = require("../models/userPost");
 
 //email config
 const transpoter = nodemailer.createTransport({
@@ -130,14 +130,14 @@ exports.userLogin = async(req,res)=>{
 }
 
 exports.userPost = async (req, res) => {
-  const { userId, content } = req.body;
+  const { title, description } = req.body;
 
-  if (!userId || !content) {
+  if (!title || !description) {
     res.status(400).json({ error: "Please provide user ID and post content." });
   }
 
   try {
-    const newPost = new Post({ userId, content });
+    const newPost = new posts({ title, description });
     const savedPost = await newPost.save();
 
     res.status(201).json(savedPost);

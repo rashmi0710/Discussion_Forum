@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect }  from "react";
 import { useNavigate } from "react-router-dom";
 // import Card from "react-bootstrap/Card";
+import { useState } from "react";
 import { PlusCircle } from "lucide-react";
 import "../styles/style.css";
 
 const TemplatePage = () => {
-  const navigate = useNavigate();
-  const [isClicked, setIsClicked] = useState(false);
   
   const userValid = () => {
     let token = localStorage.getItem("userdbtoken");
@@ -18,14 +16,15 @@ const TemplatePage = () => {
     }
   };
 
+  useEffect(() => {
+    userValid();
+  });
+  const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState(false);
   const handleButtonClick = (path) => {
     setIsClicked(true);
     navigate(path);
   };
-
-  useEffect(() => {
-    userValid();
-  });
 
   return (
     <>

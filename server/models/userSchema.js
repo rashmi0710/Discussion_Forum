@@ -6,6 +6,7 @@ const SECRECT_KEY = "asdfghjklpoi"
 
 
 const userSchema = new mongoose.Schema({
+
   fname: {
     type:String,
     required:true,
