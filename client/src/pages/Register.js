@@ -46,6 +46,7 @@ const RegisterPage = () => {
 
   return (
     <>
+    
       <section className="card_for_login">
         <div className="login-card">
           <i className="fa-solid fa-rocket fa-xl i_logo"></i>

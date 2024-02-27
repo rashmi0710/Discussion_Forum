@@ -9,14 +9,26 @@ body {
 
 .navbar {
    background-color: black; 
-   padding: 1%;
+   padding: 2%;
  }
  
  .navbar-brand {
-   color: #fff; /* Set the text color */
-   font-size: 1.5rem; /* Set the font size */
-   font-weight: bold; /* Set the font weight */
+   color: #fff; 
+   font-size: 1.5rem; 
+   font-weight: bold; 
  }
+
+ .welcome-message {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+}
+
+
  
  .form_data {
    display: flex;
@@ -62,7 +74,7 @@ body {
  a {
    color: #007bff;
    margin-left: 5px;
-   text-decoration: none; /* Added text-decoration to remove underlines */
+   text-decoration: none; 
  }
  
  a:hover {

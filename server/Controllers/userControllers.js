@@ -34,7 +34,6 @@ exports.userRegister = async (req, res) => {
 };
 
 //user send otp
-
 exports.userOtpSend = async (req, res) => {
   const { email } = req.body;
 
@@ -78,6 +77,7 @@ exports.userOtpSend = async (req, res) => {
         });
       } else {
         const saveOtpData = new userotp({
+          user: preuser._id,
           email,
           otp: OTP,
         });
@@ -130,21 +130,23 @@ exports.userLogin = async(req,res)=>{
 }
 
 exports.userPost = async (req, res) => {
-  const { title, description } = req.body;
+  const { fname, title, description } = req.body;
 
-  if (!title || !description) {
-    res.status(400).json({ error: "Please provide user ID and post content." });
+  if (!fname || !title || !description) {
+    return res.status(400).json({ error: 'Please provide name, title, and description.' });
   }
 
   try {
-    const newPost = new posts({ title, description });
+    const newPost = new posts({ fname, title, description });
     const savedPost = await newPost.save();
-
     res.status(201).json(savedPost);
   } catch (error) {
-    res.status(500).json({ error: "Internal server error.", error });
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+
 
 
 

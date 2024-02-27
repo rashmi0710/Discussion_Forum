@@ -27,7 +27,7 @@ const TemplatePage = () => {
   };
 
   return (
-    <>
+    <><p className="welcome-message ">Welcome Username</p>
       <div className="homeContainer">
         <div className="leftPanelHome">
           <button
